@@ -23,6 +23,14 @@ import { getCurrentUser } from "./features/auth";
 import { AppDispatch } from "./store/store";
 // antd
 import { ConfigProvider } from "antd";
+// react query
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 
 function App() {
   // redux dispatcher
@@ -30,34 +38,37 @@ function App() {
   const state = useSelector((state) => state);
 
   // check user auth at first mount
-  useEffect(() => {
-    dispatch(getCurrentUser());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getCurrentUser());
+  // }, []);
 
   useEffect(() => {
     console.log(state);
   }, [state]);
-
+  // Create a client
+  const queryClient = new QueryClient();
   return (
     <>
       {" "}
-      <ConfigProvider
-        theme={{
-          token: {
-            // Seed Token
-            colorPrimary: "var(  --color-primary-800  )",
-            // borderRadius: 2,
-            // Alias Token
-            // colorBgContainer: "#f6ffed",
-          },
-        }}
-      >
-        {" "}
-        <Toaster />
-        {/* <Layout> */}
+      <QueryClientProvider client={queryClient}>
+        <ConfigProvider
+          theme={{
+            token: {
+              // Seed Token
+              colorPrimary: "var(  --color-primary-800  )",
+              // borderRadius: 2,
+              // Alias Token
+              // colorBgContainer: "#f6ffed",
+            },
+          }}
+        >
+          {" "}
+          <Toaster />
+          {/* <Layout> */}
           <RouterProvider router={router} />
-        {/* </Layout> */}
-      </ConfigProvider>
+          {/* </Layout> */}
+        </ConfigProvider>
+      </QueryClientProvider>
     </>
   );
 }
