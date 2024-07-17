@@ -105,7 +105,7 @@ const LoginForm: React.FC = () => {
         </Button>
 
         <div className="flex justify-center gap-x-2 mt-7">
-          <p className="text-xs text-black">New to modimal?</p>
+          <p className="text-xs text-black">New to blog?</p>
           <button type="button" disabled={isLoading}>
             <Link to="/register">
               <p className="text-xs text-primary-400">create an account</p>

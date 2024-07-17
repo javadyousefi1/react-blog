@@ -2,9 +2,15 @@ import { useEffect } from "react";
 // css
 import "./App.css";
 // rrd
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
 // route
-import { routes } from "./routes/route";
+import { router } from "./routes/route";
 // layout
 import Layout from "./layout/Layout";
 // react hot toast
@@ -47,17 +53,10 @@ function App() {
         }}
       >
         {" "}
-        <BrowserRouter>
-          <Toaster />
-          <Layout>
-            <Routes>
-              {/* map on defined routes */}
-              {routes.map((r) => (
-                <Route key={r.id} path={r.path} element={<r.component />} />
-              ))}
-            </Routes>
-          </Layout>
-        </BrowserRouter>
+        <Toaster />
+        {/* <Layout> */}
+          <RouterProvider router={router} />
+        {/* </Layout> */}
       </ConfigProvider>
     </>
   );

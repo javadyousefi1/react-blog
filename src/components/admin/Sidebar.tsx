@@ -77,7 +77,6 @@ const Sidebar = () => {
 
   const toggleMobileMenu = () => setIsOpenMobileMenu((prev) => !prev);
 
-
   return (
     <>
       {/* desktop */}
@@ -119,9 +118,7 @@ const Sidebar = () => {
             </span>
           </div>
           {/* header */}
-          <h1 className="font-semibold text-md text-primary-800">
-            Modimal Admin
-          </h1>
+          <h1 className="font-semibold text-md text-primary-800">blog Admin</h1>
         </div>
 
         {/* map on menu */}
@@ -175,9 +172,7 @@ const Sidebar = () => {
             </span>
           </div>
           {/* header */}
-          <h1 className="text-sm font-semibold text-primary-800">
-            Modimal Admin
-          </h1>
+          <h1 className="text-sm font-semibold text-primary-800">blog Admin</h1>
         </div>
         {/* menu */}
         <button

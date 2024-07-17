@@ -1,12 +1,12 @@
 {
-  "name": "modimal",
+  "name": "blog",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite --mode d.modimal",
+    "start": "vite --mode d.blog",
     "test": "vitest --root src/",
-    "build": "vite build --mode p.modimal",
+    "build": "vite build --mode p.blog",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

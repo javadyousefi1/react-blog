@@ -18,7 +18,7 @@ const ContactUs: React.FC = () => {
   We always love hearing from our customers Please do not hesitate to contact us should you have any questions regarding our products and sizing recommendations or inquiries about your current order.
   <br>
   <br>
-  Contact our Customer Care team through the contact form below, email us at hello@modimal.com or live chat with us via our chat widget on the bottom right-hand corner of this page.
+  Contact our Customer Care team through the contact form below, email us at hello@blog.com or live chat with us via our chat widget on the bottom right-hand corner of this page.
   <br>
   <br>
   We will aim to respond to you within 1-2 business days.`;
@@ -43,7 +43,7 @@ const ContactUs: React.FC = () => {
       ),
       button: "Start Chat",
       description: "We are here and ready to chat",
-      click: () => alert("biaaaaaaaa")
+      click: () => alert("biaaaaaaaa"),
     },
     {
       id: 2,
@@ -64,7 +64,7 @@ const ContactUs: React.FC = () => {
       ),
       button: "+1(929)460-3208",
       description: "We're here to Talk to You",
-      click: () => alert("biaaaaaaaa")
+      click: () => alert("biaaaaaaaa"),
     },
     {
       id: 3,
@@ -85,7 +85,7 @@ const ContactUs: React.FC = () => {
       ),
       button: "Send Email",
       description: "You are welcome to send us an email",
-      click: () => alert("biaaaaaaaa")
+      click: () => alert("biaaaaaaaa"),
     },
   ];
 
@@ -158,32 +158,35 @@ const ContactUs: React.FC = () => {
       </Drawer>
       {/* write us for desktop */}
       <div className="w-full hidden mt-5 md:flex md:justify-center md:items-center">
-
-      <div className="w-3/4 pb-20">
-        <WriteUS desktop/>
-      </div>
+        <div className="w-3/4 pb-20">
+          <WriteUS desktop />
+        </div>
       </div>
       {/* mobile design of collapses */}
       <div className="md:hidden">
-      {collapseBox.map((item) => (
-    <ContactUSCollapse
-        icon={item.icon}
-        title={item.title}
-        key={item.id}
-    >
-        <CollapseContent button={item.button} description={item.description} onClick={item.click} />
-    </ContactUSCollapse>
-))}
+        {collapseBox.map((item) => (
+          <ContactUSCollapse icon={item.icon} title={item.title} key={item.id}>
+            <CollapseContent
+              button={item.button}
+              description={item.description}
+              onClick={item.click}
+            />
+          </ContactUSCollapse>
+        ))}
       </div>
       {/* desktop design of boxes */}
       <div className="hidden md:flex w-full justify-center items-center gap-x-6">
-      {collapseBox.map((item) => (
-    <div className="w-full flex justify-center items-center flex-col gap-y-4 bg-primary-25 p-4">
-    <div>{item.icon}</div>
-        <p className="text-[16px] font-bold">{item.title}</p>
-        <CollapseContent button={item.button} description={item.description} onClick={item.click} />
-    </div>
-))}
+        {collapseBox.map((item) => (
+          <div className="w-full flex justify-center items-center flex-col gap-y-4 bg-primary-25 p-4">
+            <div>{item.icon}</div>
+            <p className="text-[16px] font-bold">{item.title}</p>
+            <CollapseContent
+              button={item.button}
+              description={item.description}
+              onClick={item.click}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
