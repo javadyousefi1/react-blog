@@ -24,7 +24,7 @@ const Category = () => {
         linkText={{ text: "see all category", href: "" }}
       />
       {/* map on category list */}
-      <div className="flex justify-between pb-2 overflow-x-auto gap-x-4">
+      <div className="flex justify-start pb-2 overflow-x-auto gap-x-10">
         {!isLoading &&
           categoryList?.map((category) => (
             <CategoryCard
